@@ -1,6 +1,55 @@
+:root {
+  --ff-primary: font-family: "Markazi Text", "roboto", serif;
+  --ff-secondary: font-family: "Karla", "poppins", serif;
+
+  --clr-primary: #495E57;
+  --clr-secondary: #F4CE14;
+  --clr-asset: #EE9972;
+  --clr-asset-light: #FBDABB;
+  --clr-gray: #EDEFFE;
+  --clr-dark: #333333;
+
+  --rounded-md: 1rem;
+  --rounded-sm: .5rem;
+
+  --fs-3xl: 4em;     /*64px*/
+  --fs-2xl: 2.5em;   /*40px*/
+  --fs-xl: 1.25em;   /*20*/
+  --fs-lg: 1.125em;  /*18px*/
+  --fs-md: 1em;      /*16px*/
+  --fs-sm: .9em;      /*px*/
+  --fs-xs: .8em;      /*px*/
+
+  --fw-thin: 100;
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+
+  --fs-p: 1em;       /*16px*/
+  --fs-cta: var(--fs-lg);  /*18px*/
+}
+
+*, *::before, *::after {
+  /* border: 1px solid #1fd2409d; */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Karla', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,3 +60,237 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul {
+  list-style: none;
+}
+
+h1 {font-size: var(--fs-3xl);}
+h2 {font-size: var(--fs-2xl);}
+h3 {font-size: var(--fs-xl);}
+
+h1, .h1 {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-medium);
+  font-family: var(--ff-primary);
+}
+h2, .h2 {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-primary);
+}
+h3, .h3 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-secondary);
+}
+
+p {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-secondary);
+  line-height: 1.5;
+}
+
+a {
+  display: inline;
+  color: var(--clr-primary);
+  font-size: var(--fs-md);
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+a:hover {
+  cursor: pointer
+}
+
+p {
+  line-height: 1.5;
+  color: var(--clr-dark);
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: .9rem 2rem;
+  align-self: center;
+  font-weight: var(--fw-medium);
+}
+
+.btn-secondary {
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+}
+
+.rounded-md {
+  border-radius: var(--rounded-md);
+}
+.rounded-sm {
+  border-radius: var(--rounded-sm);
+}
+
+.d-flex {
+  display: flex;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items {
+  align-items: center;
+}
+.p  {
+  font-size: var(--fs-md);
+  line-height: 1.5;
+}
+
+.card-title  {font-size: var(--fs-lg);}
+
+.boxtitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+
+
+/*---------------------*/
+/*---------------------*/
+/* Páginas */
+/*---------------------*/
+/*---------------------*/
+
+.navbar {
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+  }
+
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--ff-secondary);
+
+    .nav-item {
+      color: var(--clr-dark);
+      text-transform: capitalize;
+    }
+  }
+}
+
+.hero {
+  background-color: var(--clr-primary);
+  padding: 2rem 0;
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+
+  .hero-title {
+    color: var(--clr-secondary);
+  }
+  .hero-subtitle {
+    color: var(--clr-gray);
+  }
+  .hero-p {
+    color: var(--clr-gray);
+    padding-top: 2rem;
+  }
+  .btn {
+    margin-top: 2rem;
+  }
+
+  .hero-img {
+    position: relative;
+    border: 2px solid red;
+  }
+  img {
+    position: absolute;
+    width: 18rem;
+    border-radius: var(--rounded-md);
+    right: 0;
+    top: 0;
+  }
+}
+
+.featured {
+  padding: 7rem 0;
+}
+
+.card {
+
+  --card-rounded: var(--rounded-sm) var(--rounded-sm) 0 0;
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-gray);
+  /* max-width: 20rem; */
+  border-radius: var(--rounded-sm) var(--rounded-sm) 0 0;
+
+  img {
+    object-fit: contain;
+    border-radius: var(--card-rounded);
+  }
+
+  .card-body, .card-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+  .card-body{
+    flex: 1 1 auto;
+  }
+
+  .card-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+  }
+
+  .card-price {
+    color: var(--clr-asset);
+    font-weight: var(--fw-bold);
+  }
+  .card-text {
+    margin-top: .8rem;
+  }
+  .card-footer {
+    padding-bottom: 2rem;
+  }
+
+  .card-btn {
+    display:  flex;
+    align-items: center;
+    padding: 0;
+    img {
+      width: 1rem;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.bookingpage {
+  .boxtitle {
+    display: block;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
