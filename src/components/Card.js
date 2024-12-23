@@ -67,7 +67,7 @@ export default function CardsList() {
                         <p className='card-text'>{card.description}</p>
                     </div>
                     <div className='card-footer'>
-                        <a href='#' className='card-btn btn'>{card.buttonText}
+                        <a href='/' className='card-btn btn' aria-label="On Click">{card.buttonText}
                             <img src={card.buttonIcon} />
                         </a>
                     </div>

@@ -2,7 +2,7 @@ export default function Footer() {
     return (
         <footer>
             <div className="footer-container">
-                <img src="" alt=""></img>
+                {/* <img src="" alt=""></img> */}
                 <div className="footer-col">
                     <nav>
                         <ul>

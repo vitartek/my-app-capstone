@@ -1,42 +1,45 @@
-import Card from './Card'
-import heroimg from '../assets/images/restauranfood.jpg';
+/* global fetchAPI */
+import React, { useReducer} from 'react';
+import BookingPage from './BookingPage';
+import { useNavigate } from 'react-router-dom';  // Añadir esta línea
+import { fetchAPI, submitAPI } from '../api/api';
+
+export const initializeTimes = () => {
+  const today = new Date();
+  return fetchAPI(today);
+};
+
+export const updateTimes = (state, action) => {
+  switch (action.type) {
+      case 'UPDATE_TIMES':
+          const selectedDate = new Date(action.payload);
+          return fetchAPI(selectedDate);
+      default:
+          return state;
+  }
+};
+
 
 export default function Main() {
-    return (
-        <main>
-            <section className="hero">
-                <div className="container">
-                    <div className="hero-container">
-                        <article>
-                            <h1 className="hero-title">Little Lemon</h1>
-                            <h2  className="hero-subtitle">Chicago</h2>
-                            <p  className="hero-p">
-                                We are a family owned <br />
-                                Mediterranean restaurant, <br />
-                                focused on traditional <br />
-                                recipes served with a modern <br />
-                                twist. <br />
-                            </p>
-                            <a href="#" className="btn btn-secondary rounded-sm">Reserve a Table</a>
-                        </article>
-                        <div className='hero-img'>
-                            <img src={heroimg}></img>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  const navigate = useNavigate();
+  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
-            <section className='featured'>
-                <div className="container">
-                    <div className="featured-container">
-                        <div className='boxtitle'>
-                            <h2 className='h2'>This weeks specials!</h2>
-                            <a href="#" className="btn btn-secondary rounded-sm">Online Menu</a>
-                        </div>
-                            <Card />
-                    </div>
-                </div>
-            </section>
-        </main>
-    )
+  const submitForm = (formData) => {
+    if (submitAPI(formData)) {
+      // Si la reserva es exitosa, redirige a la página de confirmación
+      navigate('/confirmed-booking');
+    }
+  };
+
+  return (
+    <main>
+      <div id="BookingSection">
+        <BookingPage 
+          availableTimes={availableTimes} 
+          dispatch={dispatch} 
+          submitForm={submitForm} // Pasa submitForm como prop
+        />
+      </div>
+    </main>
+  );
 }
