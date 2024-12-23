@@ -1,4 +1,4 @@
-/* global fetchAPI */
+
 import React, { useReducer} from 'react';
 import BookingPage from './BookingPage';
 import { useNavigate } from 'react-router-dom';  // Añadir esta línea

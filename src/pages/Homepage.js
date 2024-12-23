@@ -22,7 +22,7 @@ export default function Homepage() {
                             <a href="#BookingSection" aria-label="on Click" className="btn btn-secondary rounded-sm">Reserve a Table</a>
                         </article>
                         <div className='hero-img'>
-                            <img src={heroimg}></img>
+                            <img src={heroimg} alt="persona sosteniendo una bandeja con comida"></img>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ export default function Homepage() {
                     <div className="featured-container">
                         <div className='boxtitle'>
                             <h2 className='h2'>This weeks specials!</h2>
-                            <a href="#" aria-label="on Click" className="btn btn-secondary rounded-sm">Online Menu</a>
+                            <a href="/" aria-label="on Click" className="btn btn-secondary rounded-sm">Online Menu</a>
                         </div>
                             <Card />
                     </div>
