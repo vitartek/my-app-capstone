@@ -21,7 +21,7 @@ function App() {
               <img src={logo} alt="Logo Little Lemon" />
             </Link>
 
-            <ul>
+            {/* <ul>
               <Link to="/" className="nav-item">Home Page</Link>
               <Link to="/about-me" className="nav-item">About Me</Link>
               <Link to="/menu" className='nav-item'>Menu</Link>
@@ -29,6 +29,16 @@ function App() {
               <Link to="/bookingPage" className='nav-item'>Order Online</Link>
               <Link to="/login" className='nav-item'>Login</Link>
               <Link to="/confirmed-booking" className='nav-item'>Confirmed Booking</Link>
+            </ul> */}
+            <ul>
+              <Link to="/" className="nav-item">Home Page</Link>
+              <Link to="/" className="nav-item">About Me</Link>
+              <Link to="/" className='nav-item'>Menu</Link>
+              <Link to="/" className='nav-item'>Reservations</Link>
+              {/* <Link to="/" className='nav-item'>Order Online</Link> */}
+              <a href="#BookingSection" className='nav-item'>Order Online</a>
+              <Link to="/" className='nav-item'>Login</Link>
+              {/* <Link to="/" className='nav-item'>Confirmed Booking</Link> */}
             </ul>
           </div>
         </div>

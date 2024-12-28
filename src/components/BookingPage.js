@@ -4,12 +4,17 @@ import BookingForm from './BookingForm';
 
 const BookingPage = ({ availableTimes, dispatch, submitForm }) => {
     return (
-      <div>
-        <BookingForm 
-          availableTimes={availableTimes} 
-          dispatch={dispatch} 
-          submitForm={submitForm} // Pasa submitForm aquí también
-        />
+      <div className='booking'>
+        <div className='container'>
+            <div className='boxtitle'>
+                <h2 className='h2'>Order a Table</h2>
+            </div>
+            <BookingForm 
+              availableTimes={availableTimes} 
+              dispatch={dispatch} 
+              submitForm={submitForm} // Pasa submitForm aquí también
+            />
+        </div>
       </div>
     );
   };

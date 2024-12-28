@@ -1,7 +1,7 @@
 
 import React, { useReducer} from 'react';
 import BookingPage from './BookingPage';
-import { useNavigate } from 'react-router-dom';  // Añadir esta línea
+import { useNavigate } from 'react-router-dom';
 import { fetchAPI, submitAPI } from '../api/api';
 
 export const initializeTimes = () => {
@@ -26,7 +26,6 @@ export default function Main() {
 
   const submitForm = (formData) => {
     if (submitAPI(formData)) {
-      // Si la reserva es exitosa, redirige a la página de confirmación
       navigate('/confirmed-booking');
     }
   };
@@ -34,10 +33,11 @@ export default function Main() {
   return (
     <main>
       <div id="BookingSection">
-        <BookingPage 
+        <BookingPage
           availableTimes={availableTimes} 
           dispatch={dispatch} 
-          submitForm={submitForm} // Pasa submitForm como prop
+          submitForm={submitForm}
+          tabIndex={0}
         />
       </div>
     </main>

@@ -6,7 +6,7 @@ import heroimg from '../assets/images/restauranfood.jpg';
 export default function Homepage() {
     return (
         <>
-            <section className="hero">
+            <section className="hero" tabIndex={0}>
                 <div className="container">
                     <div className="hero-container">
                         <article>
@@ -28,7 +28,7 @@ export default function Homepage() {
                 </div>
             </section>
 
-            <section className='featured'>
+            <section className='featured' tabIndex={0}>
                 <div className="container">
                     <div className="featured-container">
                         <div className='boxtitle'>
